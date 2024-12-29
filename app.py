@@ -13,7 +13,7 @@ from itemid import itemidotp
 mydb=mysql.connector.connect(host='localhost',
 user='root',
 password='@Oberoi4:))',
-db='ecommerce'
+db='ecomerce'
 )
 app=Flask(__name__)
 app.secret_key='jnvnkdfjvndjs'
