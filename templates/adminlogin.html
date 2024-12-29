@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/login.css">
+</head>
+<style>
+  body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Card container */
+        .card {
+            background-color: beige;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Form styling */
+        .form h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .input-field i {
+            margin-right: 10px;
+            color: #888;
+        }
+
+        .input-field input {
+            border: none;
+            outline: none;
+            flex: 1;
+            background-color: transparent;
+            font-size: 1em;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+</style>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+  <form method="POST">
+  <div class="card">
+    <div class="form">
+      <h3>Login</h3>
+      <div class="input-field">
+          <i class="fa fa-envelope"></i>
+          <input type="text" name="email" placeholder="Enter your email">
+      </div>
+      <div class="input-field">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" placeholder="Enter your password">
+    </div> 
+    <button>Login</button>
+    <p>Don't have an account?<a href="{{url_for('adminsignup')}}"> 
+      No Account?</a></p>
+    </div>
+    <div class="image">
+      <div class="overlay">
+        <h3>Get Started...!<br>With new Products</h3>
+        <p>Shop Now</p>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>
