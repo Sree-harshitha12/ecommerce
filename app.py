@@ -63,7 +63,7 @@ def otp(otp,username,mobile,email,address,password):
         else:
             flash('Wrong otp')
             return render_template('otp.html',otp=otp,username=username,mobile=mobile,email=email,address=address,password=password)
-     return render_template('otp.html',otp=otp,username=username,mobile=mobile,email=email,address=address,password=password)
+    return render_template('otp.html',otp=otp,username=username,mobile=mobile,email=email,address=address,password=password)
 @app.route('/login',methods=['GET','POST'])
 def login():
     if request.method=="POST":
